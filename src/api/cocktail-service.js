@@ -39,5 +39,10 @@ export const getCocktailDetail = async (id) => {
 export const searchByName = async (query) => {
   const { data } = await axios.get(`/search.php?s=${query}`);
 
-  return data;
+  return data.drinks.map(({ idDrink, strDrinkThumb, strDrink, strGlass }) => ({
+    idDrink,
+    strDrinkThumb,
+    strDrink,
+    strGlass,
+  }));
 };
