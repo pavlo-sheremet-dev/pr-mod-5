@@ -33,11 +33,9 @@ export const CocktailDetail = () => {
     toast.error(error);
   }, [error]);
 
-  console.log(location)
-
   return (
     <Section>
-    <GoBackBtn path={location.state?.from ?? '/'}/>
+      <GoBackBtn path={location.state?.from ?? routes.HOME} />
       <h1 className="uppercase text-4xl text-gray-600 text-center">
         {details && <CocktailInfo {...details} />}
       </h1>
